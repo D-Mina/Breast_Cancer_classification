@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Recovery - Al-Hayat Hospital</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap"> <!-- Google Font Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Forgetpass/Forget.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('login') }}" class="back-arrow">&#8592;</a> 
+        <h2>Reset Password</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder=" Enter your username" required />
+            <div class="form-group">
+                <label id="NewPassword" for="new-password">New Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="new-password" placeholder=" Enter new password" required />
+                    <span class="toggle-password" onclick="togglePasswordVisibility('new-password')">&#128065;</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" placeholder=" Confirm new password" required />   
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">&#128065;</span>
+                </div>
+            </div>
+            <div class="Rbutton">
+                <button id="resetPasswordBtn">Reset Password</button>
+            </div>
+        
+        <div class="success" id="success-message">Your password has been reset successfully!</div>
+        <div class="error" id="error-message">An error occurred, please try again.</div>
+        <div class="Llink">
+            <a href="{{ url_for('login') }}" class="login-link" id="login-link">Already have an account? Log in</a>
+        </div>
+        
+    </div>
+    <script>
+        const logUrl = "{{ url_for('login') }}";
+   </script>
+    <script src="{{ url_for('static', filename='js/Forgetpass/Forget.js') }}"></script>
+</body>
+</html>

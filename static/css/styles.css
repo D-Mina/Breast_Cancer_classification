@@ -1,0 +1,965 @@
+ /* General Settings */
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #fddde6;
+    /* Pink background color */
+    height: 100vh;
+    /* Make the page take the full screen height */
+    position: relative;
+    animation: fadeIn 1s;
+    /* Add fade-in effect */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Page Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gradient in the top left and bottom right corners */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 153, 200, 0.5);
+    /* Gradient color with transparency */
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    /* Place it behind other elements */
+}
+
+body::before {
+    top: -150px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+}
+
+body::after {
+    bottom: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fddde6;
+    /* Unified background color */
+    width: 100%;
+    height: 70px;
+    /* Fixed height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+    /* Professional effect */
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Shadow effect on hover */
+}
+
+.navbar-border {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: fixed;
+    top: 70px;
+    /* Place the separator line below the navigation bar */
+    z-index: 999;
+    /* Ensure it is above other elements */
+}
+
+.navbar .logo h1 {
+    font-family: 'Times New Roman', serif;
+    /* Use Times New Roman font for the company title */
+    font-size: 32px;
+    /* Font size */
+    font-weight: bold;
+    color: #ff4081;
+    /* Primary title color */
+    margin: 0;
+    letter-spacing: 2px;
+    /* Letter spacing */
+    text-transform: uppercase;
+    /* Convert letters to uppercase */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    /* To make underline appear */
+    transition: color 0.3s ease;
+    /* Professional effect on hover */
+}
+
+.nav-links a:hover {
+    color: #ff4081;
+    /* Change color on hover */
+}
+
+.nav-links a:hover::after {
+    content: '';
+    /* Add underline */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    /* Place underline beneath the text */
+    height: 2px;
+    background-color: #ff4081;
+    /* Underline color */
+    transition: width 0.3s ease;
+    /* Smooth transition */
+    width: 100%;
+    /* Full width */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.signup {
+    color: white;
+    background-color: #ff4081;
+    transition: transform 0.3s ease;
+    /* Professional effect */
+}
+
+.signup:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    /* Scale up on hover */
+}
+
+.login {
+    color: white;
+    background-color: #333;
+    transition: transform 0.3s ease;
+    /* Professional effect */
+}
+
+.login:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    /* Scale up on hover */
+}
+
+/* Main Section Design */
+.Home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Align text and image to the right */
+    height: calc(100vh - 72px);
+    /* Ensure the full height is used, subtracting the navbar and line height */
+    padding: 20px 40px;
+    margin-top: 72px;
+    /* Avoid overlap with the navbar */
+    overflow: auto;
+    /* Allow scrolling within the section */
+    animation: slideIn 1s;
+    /* Main section entry effect */
+}
+
+/* Main Section Entry Effect */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.Home-text {
+    max-width: 45%;
+    /* Limit the maximum width of the text */
+    position: relative;
+    /* Allow overlap to appear above it */
+    z-index: 1;
+    /* Place it above the gradient */
+    padding: 20px;
+    /* Add padding to the text */
+    border-radius: 15px;
+    /* Rounded corners for the background */
+    margin-left: 50px;
+    /* Add space between the text and image */
+}
+
+.Home-text h2 {
+    font-size: 48px;
+    /* Make the heading larger */
+    color: #ff4081;
+    margin: 0 0 20px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.Home-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.Home-text .learn-more {
+    background-color: #ff4081;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    /* To make it look consistent */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Professional effect on hover */
+}
+
+.Home-text .learn-more:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    /* Scale up on hover */
+}
+
+.Home-image {
+    max-width: 50%;
+    text-align: right;
+}
+
+.Home-image img {
+    width: 80%;
+    /* Reduce image size */
+    object-fit: contain;
+    /* Ensure the image is not distorted */
+}
+
+
+/* File Upload Section Design */
+.upload-section {
+    height: calc(100vh - 72px);
+    /* Section height with navbar height subtracted */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    /* Section background color */
+    animation: fadeInSection 1s;
+    padding-bottom: 30px;
+    padding: 50px;
+}
+
+/* File Upload Section Entry Effect */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modify the upload-container */
+.upload-container {
+    background-color: #fddde6;
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.5s ease; /* Smooth transition for size */
+    position: relative;
+    max-height: 100vh; /* Ensure the container does not exceed screen height */
+    box-sizing: border-box; /* Consider padding within the box */
+}
+
+.upload-container.small {
+    padding-top: 35px; /* Reduce padding after image is uploaded */
+    height: auto; /* Container adjusts according to content size */
+    max-height: 70vh; /* Maximum height for the container */
+}
+
+
+#uploadedImage.show {
+    display: block; /* Show image after upload */
+}
+
+/* "Classification" Button */
+.classification-button.show {
+    display: inline-block;
+    margin-bottom: 10px; /* Reduce space between the button and other elements */
+}
+
+.upload-container:hover {
+    transform: scale(1.00);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.upload-container h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 60px;
+}
+
+.upload-container input[type="file"] {
+    display: none;
+}
+
+.upload-button {
+    padding: 20px 50px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff4081;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 20px 0;
+    width: 100%;
+    /* Expand button width */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.upload-button:hover {
+    background-color: #e03070;
+    transform: scale(1.1);
+}
+
+.file-name {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+    font-style: italic;
+}
+
+.file-name.active {
+    color: #ff4081;
+}
+
+/* Image Display */
+#uploadedImage {
+    margin: 30px;
+    margin-left: 200px;
+    align-items: center;
+    max-width: 30%;
+    max-height: 400px;
+    display: none;
+   
+}
+
+/* "Classification" Button */
+.classification-button {
+    margin-top: 5px;
+    /* Space between the button and file selection */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none;
+    /* Hide the classification button initially */
+    
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.classification-button.show {
+    display: inline-block;
+    /* Show the button when needed */
+}
+
+.classification-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.10);
+    animation: bounce 1s infinite;
+}
+
+/* Arrow Design */
+.arrow {
+    position: absolute;
+    left: -40px;
+    /* Arrow position relative to the button */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    /* Arrow size */
+    color: #ff4081;
+    /* Arrow color */
+    opacity: 0;
+    /* Hide the arrow initially */
+    animation: slideIn 1s forwards;
+    /* Add animation to the arrow */
+}
+
+@keyframes slideIn {
+    0% {
+        left: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        left: -40px;
+        opacity: 1;
+    }
+}
+
+/* "Service" Title Design */
+.service-title {
+    position: absolute;
+    /* Ensure title is above the card */
+    top: 0;
+    /* Position at the top */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Ensure perfect centering */
+    margin-top: -40px;
+    /* Adjust space above the card */
+    text-align: center;
+    /* Center the title */
+    animation: slideDownTitle 1.5s ease;
+    /* Add entry animation */
+}
+
+
+.service-title h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    padding-top: 65px;
+}
+
+.underline {
+    width: 120px;
+    height: 4px;
+    background-color: #ff4081;
+    /* Line color */
+    margin: 10px auto;
+    /* Center the line under the title */
+    border-radius: 5px;
+    animation: growLine 1.5s ease;
+    /* Add animation to the line */
+}
+
+/* Title slide-down animation */
+@keyframes slideDownTitle {
+    from {
+        transform: translate(-50%, -40px);
+        /* Start the movement from above */
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        /* Move to the center */
+        opacity: 1;
+    }
+}
+
+/* Line growth animation */
+@keyframes growLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 120px;
+    }
+}
+
+/* Modify the upload-section to provide space for elements */
+.upload-section {
+    position: relative;
+    /* Precisely position the title */
+    padding-top: 100px;
+    /* Provide space for the title */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    /* Section background color */
+    animation: fadeInSection 1s;
+}
+
+/* About Section to cover 100VH */
+.about-section {
+    height: 90vh; /* Cover the entire screen */
+    padding: 0 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute elements evenly vertically */
+    align-items: center;
+    overflow: hidden; /* Prevent overlap */
+    position: relative; /* Allow background animations */
+}
+
+/* About Section Title */
+.about-title {
+    font-size: 36px;
+    font-weight: bold;
+    animation: fadeIn 1.2s ease-out;
+    position: relative;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+.about-title:after {
+    content: '';
+    width: 100%; /* Line width matches title width */
+    height: 4px;
+    background-color: #ff4081;
+    position: absolute;
+    left: 0; /* Position the line directly under the title */
+    bottom: -10px;
+}
+
+/* Info boxes and their distribution */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the boxes */
+    gap: 20px;
+    width: 100%;
+    height: auto; /* Adjust height to content */
+    overflow: hidden; /* Prevent excess space */
+    padding-bottom: 20px; /* Reduce bottom space */
+}
+
+/* Info boxes inside the About Section */
+.info-box {
+    width: 40%; /* Set width */
+    height: 220px; /* Box height */
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Add rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add transition effects */
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Effects when interacting with the info boxes */
+.info-box:hover {
+    transform: scale(1.05); /* Scale the box on hover */
+    background-color: rgba(255, 64, 129, 0.3); /* Change background to semi-transparent */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
+/* Increase text size inside the boxes when interacting */
+.info-box:hover h3 {
+    font-size: 26px; /* Increase title size on hover */
+}
+
+.info-box:hover p {
+    font-size: 25px; /* Increase text size */
+}
+
+/* Format titles inside the boxes */
+.info-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ff4081;
+}
+
+/* Format text inside the boxes */
+.info-box p {
+    font-size: 21px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Animation for boxes appearing on page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info boxes appear with animation on load */
+.info-box {
+    animation: fadeInUp 0.7s ease both;
+}
+
+/* Larger shadows on hover */
+.info-box:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation for line under title */
+@keyframes slideInLine {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 50%; /* Final line width */
+    }
+}
+
+/* **************************** */
+/* Contact Us Section */
+.contact-us-section {
+    background-color: rgba(255, 64, 129, 0.3);
+    padding-top: 30px;
+    padding-left: 0px; /* Add space around the section */
+    padding-right: 0px;
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+.contact-us-section h2 {
+    font-size: 36px;
+    color: #fff; /* White text color */
+    margin: 0;
+    text-transform: capitalize; /* Capitalizes the first letter of each word */
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1s ease-in-out;
+    padding-bottom: 20px; /* Bottom spacing before the line */
+}
+
+/* Adding a white line under the "Contact Us" title */
+.contact-us-section h2::after {
+    content: '';
+    width: 80px; /* Line width */
+    height: 4px; /* Line height */
+    background-color: #fff; /* White line color */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the line */
+    bottom: -10px; /* Line spacing from the title */
+    animation: slideInLine 1.5s ease-out forwards;
+}
+
+/* Circular icon styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows icons to wrap properly on smaller screen sizes */
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 40px;
+    color: #333; /* Icon color */
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Add shadow effect */
+    position: relative;
+    z-index: 1;
+    border-radius: 50%; /* Circular shape for the icon */
+    padding: 20px; /* Space around the icon */
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for the icon */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+/* Change icon color on hover */
+.social-icon:hover {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}
+
+/* Facebook icon */
+.social-icon:hover .fa-facebook-f {
+    color: #004cef; /* Blue color on hover */
+    transform: scale(1.2);
+}
+
+/* Instagram icon */
+.social-icon:hover .fa-instagram {
+    color: #e1306c; /* Pink color on hover */
+    transform: scale(1.2);
+}
+
+/* WhatsApp icon */
+.social-icon:hover .fa-whatsapp {
+    color: #25d366; /* Green color on hover */
+    transform: scale(1.2);
+}
+
+/* Snapchat icon */
+.social-icon:hover .fa-snapchat-ghost {
+    color: #fffc00; /* Yellow color on hover */
+    transform: scale(1.2);
+}
+
+/* Animation for icons */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.social-icon i {
+    animation: bounce 2s infinite; /* Apply professional animation */
+}
+
+/* Animation for headings */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer styling */
+.footer {
+    background-color: rgba(255, 64, 129, 0.3); /* Colored background */
+    color: rgb(0, 0, 0); /* Text color */
+    padding: 10px 0px; /* Padding */
+    text-align: center; /* Center the text */
+    position: relative; /* To enable background animations */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Contact information styling */
+.footer-contact {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Evenly distribute elements */
+    align-items: center; /* Vertically center elements */
+    gap: 40px; /* Space between items */
+    animation: fadeInUp 0.9s ease; /* Animation effect */
+    padding-top: 50px;
+}
+
+/* Styling for each contact item */
+.contact-item {
+    text-align: center; /* Center text inside items */
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+/* Remove rotation on hover */
+.contact-item:hover {
+    transform: scale(1.2); /* Enlarge the item on hover */
+}
+
+/* Font Awesome icons */
+.contact-item i {
+    font-size: 36px; /* Icon size */
+    margin-bottom: 5px; /* Bottom margin */
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+/* Remove rotation on hover */
+.contact-item:hover i {
+    /* Uncomment or remove this line to cancel the effect */
+    /* transform: rotate(360deg); */ /* Icon rotation on hover */
+}
+
+/* Title of the image section */
+.footer-title {
+    font-size: 36px; /* Title size */
+    font-weight: bold;
+    color: rgb(0, 0, 0); /* Title color */
+    margin-bottom: 10px; /* Space between the title and elements */
+    position: relative; /* To allow background animations */
+    padding: 30px 0px;
+    margin-top: 0px;
+}
+
+/* Line under the title */
+.footer-title::after {
+    content: '';
+    width: 80px; /* Line width */
+    height: 4px; /* Line height */
+    background-color: #ff4081; /* Same color as the title */
+    position: absolute; /* To place the line under the title */
+    left: 50%;
+    transform: translateX(-50%); /* Center the line */
+    bottom: -10px; /* Move the line below the title */
+    animation: slideInLine 1.5s ease-out forwards; /* Add animation */
+}
+
+/* Animation effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Line movement under the title */
+@keyframes slideInLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 230px; /* Final line width */
+    }
+}
+
+/* Final footer with copyright */
+.Cfooter {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    text-align: center; /* Center text */
+    padding: 30px 0; /* Padding */
+    position: relative; /* Ensure it's not fixed */
+    bottom: 0; /* Fix only if content is smaller */
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure it's above other content */
+    margin-top: 30px;
+}
+
+/* Footer text styling */
+.Cfooter p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Text size */
+    letter-spacing: 1px; /* Letter spacing */
+}
+
+.footer .footer-container h2 {
+    font-size: 36px;
+    color: #000; /* Text color */
+    margin: 0;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px; /* Bottom spacing before the line */
+    display: inline-block; /* Makes the width of the heading match the word only */
+}
+
+.footer .footer-container h2::after {
+    content: '';
+    display: block;
+    width: 100%; /* Set the line width equal to the heading width */
+    height: 4px; /* Line height */
+    background-color: #ff4081; /* Line color */
+    margin: 5px auto 0; /* Space between the title and the line */
+}
+
+/* Prevent horizontal scrolling */
+.container {
+    max-width: 100%; /* Prevent elements from exceeding the screen width */
+}
+
+img {
+    max-width: 100%; /* Ensure images fit within the screen width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.upload-button, .classification-button {
+    width: 25%; /* Ensure buttons take up full screen width */
+}
+
+#predictionResult {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 150px));
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}

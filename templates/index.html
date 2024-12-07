@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Breast Cancer Classification </title>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <h1>Breast Cancer</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#serv">Service</a></li>
+            <li><a href="#abou">About</a></li>
+            <li><a href="#foot">Contact Us</a></li>
+        </ul>
+    
+        <div class="nav-buttons">
+           
+            <a href="{{ url_for('signUp') }}" class="btn signup" id="signUpButton">Sign Up</a>
+            <a href="{{ url_for('login') }}" class="btn login" id="loginButton">Login</a>
+            <button id="logOutButton" class="btn logout" style="display: none;" onclick="logOut()">Log Out</button>
+        </div>
+    </nav>
+
+    <!-- Thin black line under the navigation bar -->
+    <div class="navbar-border"></div>
+
+    <!-- Main Section -->
+    <div class="Home">
+        <div class="Home-text">
+            <h2>Breast Cancer Classification </h2>
+            <p>Breast Cancer Classification Using Machine Learning is a project that aims to use machine learning
+                techniques to analyze medical data and classify breast cancer cases. The project aims to improve
+                diagnostic accuracy, and provide advice to patients with breast cancer.</p>
+            <a href="{{ url_for('Learn') }}" class="learn-more" target="_blank">Learn More</a>
+        </div>
+        <div class="Home-image">
+            <img src="/static/images/breast-cancer-awareness-month-free-png.png" alt="Breast Cancer Awareness">
+        </div>
+    </div>
+
+    <!-- Service Section -->
+
+    <section id="serv" class="upload-section">
+        <div class="service-title">
+            <h2>Service</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="upload-container">
+            <h2>Upload The Image</h2>
+            <input type="file" id="fileUpload" accept="image/*" style="display:none;" />
+            <label for="fileUpload" class="upload-button">Choose Image</label>
+            <img id="uploadedImage" alt="Uploaded Image Preview" style="display:none;" />
+            <div class="file-name" id="fileName">No file chosen</div>
+            <button class="classification-button" id="classificationButton">Classify</button>
+            <div class="arrow" id="arrow">&#8594;</div>
+        </div>
+        <div id="predictionResult" class="prediction-result"></div>
+    </section>
+
+    <!-- About Section -->
+    <div id="abou" class="about-section">
+        <h2 class="about-title">About</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>What is Cancer?</h3>
+                <p>Cancer is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body.</p>
+            </div>
+            <div class="info-box">
+                <h3>Early Detection</h3>
+                <p>Early detection of cancer increases the chances of successful treatment and can save lives.</p>
+            </div>
+            <div class="info-box">
+                <h3>Symptoms</h3>
+                <p>Common symptoms of cancer include unexplained weight loss, fatigue, and changes in skin appearance.</p>
+            </div>
+            <div class="info-box">
+                <h3>Treatment Options</h3>
+                <p>Treatment options vary based on the type and stage of cancer, including surgery, chemotherapy, and radiation therapy.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <footer id="foot" class="footer">
+        <div class="footer-container">
+            <h2 class="footer-title">Contact Us</h2>
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: Meena.ashraf.61@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>Phone: +20 122 496 1935</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Address: Carrefour, El Shrouk city, Egypt</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer Section -->
+    <section id="contact-us" class="contact-us-section">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100018457804803&mibextid=ZbWKwL" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/mina_ashraf13/profilecard/?igsh=MW84cmIwcTB4ZmE1dw==" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://web.whatsapp.com/" class="social-icon" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.snapchat.com/add/mina_ashraf61?share_id=gw3lYWAEz8E&locale=ar-AE" class="social-icon" target="_blank">
+                <i class="fab fa-snapchat-ghost"></i>
+            </a>
+        </div>
+        <!-- Copyright Section -->
+        <footer class="Cfooter">
+            <p>Copyright © 2024 Arab Open University. All Rights Reserved</p>
+        </footer>
+    </section>
+    <script>
+        const log2Url = "{{ url_for('login') }}";
+   </script>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Awareness</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fee7ed;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin: 40px;
+            animation: fadeInDown 2s ease-in-out;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        p, ul {
+            font-size: 1.2rem;
+            margin: 20px 15px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #333;
+        }
+        .content-box {
+            background-color: #fff7f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 950px;
+            border-left: 5px solid #d81b60;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: block;
+            margin: 40px auto;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            color: #d81b60;
+            font-size: 1.5rem;
+            border-radius: 30px;
+            text-align: center;
+            width: fit-content;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #d81b60;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .image-text-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .image-text-section img {
+            width: 45%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 2s ease-in-out;
+        }
+        .image-text-section.reverse img {
+            order: -1;
+        }
+        .text-section {
+            width: 45%;
+            padding: 20px;
+        }
+        .text-section h2 {
+            font-size: 2.5rem;
+        }
+        .footer {
+            text-align: center;
+            align-items: center;
+            font-size: 0.9rem;
+            padding-left: 450px;           
+            color: #fff;
+          
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Breast Cancer Awareness</h1>
+
+    <div class="content-box">
+        <p>
+            Breast cancer is a disease that affects both women and men, although it is much more common in women. In fact, breast cancer is one of the most common cancers worldwide, and early detection plays a critical role in saving lives. The earlier breast cancer is diagnosed, the higher the chances of successful treatment and survival. It is important to understand the risk factors, symptoms, and preventive measures associated with breast cancer to help reduce the overall impact of this disease.
+        </p>
+    </div>
+
+    <!-- Section 1: Image left, text right -->
+    <div class="image-text-section">
+        <div class="text-section">
+            <h2>Risk Factors</h2>
+            <p>
+                There are many risk factors that can increase the likelihood of developing breast cancer. Some are controllable, while others are not. The key risk factors include:
+            </p>
+            <ul>
+                <li><strong>Age:</strong> The risk of developing breast cancer increases with age, with most cases diagnosed in women over the age of 50.</li>
+                <li><strong>Family History:</strong> Women who have a family history of breast cancer are at a higher risk, especially if a close relative, such as a mother or sister, has had the disease.</li>
+                <li><strong>Genetic Mutations:</strong> Inherited mutations in certain genes, such as BRCA1 and BRCA2, significantly increase the risk of breast cancer.</li>
+                <li><strong>Hormonal Factors:</strong> Long-term exposure to estrogen, such as early menstruation or late menopause, can increase the risk of breast cancer.</li>
+                <li><strong>Lifestyle Factors:</strong> Poor diet, lack of physical activity, alcohol consumption, and smoking can contribute to an increased risk of breast cancer.</li>
+            </ul>
+        </div>
+        <img src="/static/images/tbl_articles_article_36643_221c90306b5-cc1e-417b-8eab-ac5740cc8a36.jpg" alt="Risk Factors">
+    </div>
+
+    <!-- Section 2: Image right, text left (reversed order) -->
+    <div class="image-text-section reverse">
+        <div class="text-section">
+            <h2>Symptoms and Early Detection</h2>
+            <p>
+                Early detection is key to successfully treating breast cancer. Many women may not experience symptoms in the early stages of the disease, which is why regular screenings and self-exams are so important. Some common symptoms of breast cancer include:
+            </p>
+            <ul>
+                <li><strong>Lumps:</strong> A hard, painless lump in the breast is one of the most common signs of breast cancer.</li>
+                <li><strong>Change in Size or Shape:</strong> If one breast becomes noticeably larger or changes shape, it may indicate the presence of cancer.</li>
+                <li><strong>Skin Changes:</strong> The skin on the breast may become red, dimpled, or have a texture similar to an orange peel.</li>
+                <li><strong>Nipple Changes:</strong> Any changes in the nipple, such as inversion or discharge, should be investigated by a doctor.</li>
+            </ul>
+        </div>
+        <img src="/static/images/da30c8fea293450caeb5315d80707968.jpg.webp" alt="Symptoms and Early Detection">
+    </div>
+
+    <!-- Section 3: Image left, text right -->
+    <div class="image-text-section">
+        <div class="text-section">
+            <h2>Preventive Measures</h2>
+            <p>
+                While not all breast cancer risk factors can be controlled, there are several lifestyle changes and preventive measures that can reduce the risk of developing the disease:
+            </p>
+            <ul>
+                <li><strong>Regular Screenings:</strong> Women should undergo regular mammograms starting at the age of 40, or earlier if they have a family history of breast cancer.</li>
+                <li><strong>Self-Exams:</strong> Performing regular breast self-exams allows women to become familiar with the normal look and feel of their breasts, making it easier to notice any changes.</li>
+                <li><strong>Healthy Diet:</strong> Eating a balanced diet rich in fruits, vegetables, and whole grains while limiting processed foods can help maintain overall health.</li>
+                <li><strong>Physical Activity:</strong> Engaging in regular physical activity, such as walking, swimming, or yoga, can lower the risk of breast cancer.</li>
+                <li><strong>Avoid Alcohol and Smoking:</strong> Limiting alcohol intake and avoiding smoking are key factors in reducing the risk of breast cancer.</li>
+            </ul>
+        </div>
+        <img src="/static/images/health-231020-5.jpg" alt="Preventive Measures">
+    </div>
+
+    <a href="{{ url_for('index') }}" class="btn">Return to Home</a>
+
+    <div class="footer">
+        <p>Copyright © 2024 Arab Open University. All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

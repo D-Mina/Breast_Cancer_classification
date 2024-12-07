@@ -1,0 +1,213 @@
+/* General Settings */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.login-section {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.container {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: black;
+    font-size: 24px;
+}
+
+/* Back Arrow */
+.back-arrow {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.back-arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #d81b60;
+    box-shadow: 0 0 5px rgba(216, 27, 96, 0.5);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Error Message */
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    visibility: hidden;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.error.show {
+    visibility: visible;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-decoration: underline;
+}
+
+.forgot-password:hover {
+    transform: scale(1.05);
+}
+
+/* New Account Link */
+.create-account {
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-decoration: underline;
+}
+
+.create-account:hover {
+    transform: scale(1.05);
+}
+
+/* Social Login Buttons */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 100%;
+}
+
+.facebook {
+    background-color: #0051ff;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input {
+        font-size: 1rem;
+    }
+}
+
+/* Toggle Password */
+.toggle-password {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(30%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    user-select: none;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: #d81b60;
+}
