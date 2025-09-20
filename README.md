@@ -8,6 +8,7 @@ It includes:
 * **Frontend** (HTML templates for user interaction: Login, Signup, Learn More, Upload, etc.)
 * **Backend** (Flask API for prediction and routing)
 * **Deep Learning Model** (VGG19 trained on breast cancer dataset, saved as `cancer-model.h5`)
+* **link** https://www.kaggle.com/code/minaashraf61/breastcare-ai
 
 ---
 
